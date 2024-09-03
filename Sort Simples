@@ -1,0 +1,24 @@
+#include <iostream>
+#include <algorithm>
+#include <array>
+
+void ler(int& a, int& b, int& c) {
+    std::cin >> a >> b >> c;
+}
+
+void ordenar(int& a, int& b, int& c) {
+    std::array<int, 3> arr = {a, b, c};
+    std::sort(arr.begin(), arr.end());
+    a = arr[0];
+    b = arr[1];
+    c = arr[2];
+}
+
+int main() {
+    int a, b, c;
+    ler(a, b, c);
+    int x = a, y = b, z = c;
+    ordenar(x, y, z);
+    std::cout << x << "\n" << y << "\n" << z << "\n\n" << a << "\n" << b << "\n" << c << "\n";
+    return 0;
+}
