@@ -1,0 +1,22 @@
+#include <iostream>
+#include <string>
+#include <cctype>
+
+int main() {
+    std::string sentence;
+    while (std::getline(std::cin, sentence)) {
+        bool upper = true; // Começa com maiúscula
+        for (char& c : sentence) {
+            if (std::isalpha(c)) {
+                if (upper) {
+                    c = std::toupper(c);
+                } else {
+                    c = std::tolower(c);
+                }
+                upper = !upper; // Alterna entre maiúscula e minúscula
+            }
+        }
+        std::cout << sentence << std::endl;
+    }
+    return 0;
+}
